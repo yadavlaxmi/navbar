@@ -8,7 +8,7 @@ const DrawerComp=()=>{
     const[open,setOpen]=useState(false)
     return(
         <>
-        <Drawer open={true} onClose={()=>setOpen(false)}>
+        <Drawer  anchor="right" open={true} onClose={()=>setOpen(false)}>
             <List>
                 <ListItemButton>
                     <ListItemIcon>
