@@ -14,12 +14,14 @@ const DrawerComp = ({ links }) => {
 
   return (
     <>
-      <Drawer open={open} onClose={() => setOpen(false)}>
+      <Drawer PaperProps={{
+        sx:{backgroundColor:"rgba(2,0,36,1) "}
+      }} open={open} onClose={() => setOpen(false)}>
         <List>
           {links.map((link, index) => (
-            <ListItemButton key={index}>
+            <ListItemButton onClick={()=>setOpen(false)}key={index} divider>
               <ListItemIcon>
-                <ListItemText primary={link} />
+                <ListItemText sx={{color:"white"}}>{link}</ListItemText>
               </ListItemIcon>
             </ListItemButton>
           ))}
