@@ -1,4 +1,5 @@
 import React, { useState } from 'react'; 
+import DrawerComp from './DrawerComp';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import {placeItems, marginLeft,AppBar, Grid, Typography,Toolbar,Tabs,Tab, Button,Box } from "@mui/material";
 import { ShoppingCartCheckout } from "@mui/icons-material";
@@ -29,6 +30,7 @@ const Navbar=({links})=>{
                     </Box>
                     </Grid>
                 </Grid>
+                <DrawerComp/>
             </Toolbar>
                
         </AppBar>
