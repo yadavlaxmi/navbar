@@ -4,7 +4,7 @@ import { List,Drawer, IconButton, ListItemButton, ListItemIcon, ListItemText } f
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 
 
-const DrawerComp=()=>{
+const DrawerComp=(links)=>{
     const[open,setOpen]=useState(false)
     return(
         <>

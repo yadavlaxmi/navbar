@@ -26,7 +26,12 @@ const Navbar = ({ links }) => {
     >
       <Toolbar>
         {isMatch ? (
-          <DrawerComp />
+            <>
+            <Typography>
+                <ShoppingCartCheckoutIcon />
+              </Typography>
+          <DrawerComp links={links}/>
+          </>
         ) : (
           <Grid sx={{ placeItems: 'center' }} container>
             <Grid item xs={2}>
