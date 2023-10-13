@@ -14,56 +14,58 @@ import DrawerComp from './DrawerComp';
 
 const Navbar = ({ links }) => {
   const theme = useTheme();
-  console.log(theme)
   const isMatch = useMediaQuery(theme.breakpoints.down('sm'));
-  console.log(isMatch)
-  const [val, setVal] = useState(0); 
+  const [val, setVal] = useState(0);
 
   return (
     <AppBar
       sx={{
-        backgroundImage: "linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,0.9024390243902439) 35%, rgba(0,212,255,1) 100%)"
+        backgroundImage:
+          "linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,0.9024390243902439) 35%, rgba(0,212,255,1) 100%)",
       }}
     >
       <Toolbar>
-        {isMatch}
-        <Grid sx={{ placeItems: 'center' }} container>
-          <Grid item xs={2}>
-            <Typography>
-              <ShoppingCartCheckoutIcon /> {/* Use the icon component */}
-            </Typography>
-          </Grid>
-          <Grid item xs={6}>
-            <Tabs
-              indicatorColor="secondary"
-              textColor="inherit"
-              value={val}
-              onChange={(e, val) => setVal(val)}
-            >
-              {links.map((link, index) => (
-                <Tab key={index} label={link} />
-              ))}
-            </Tabs>
-          </Grid>
-          <Grid item xs={1} />
-          <Grid item xs={3}>
-            <Box display="flex">
-              <Button
-                sx={{ marginLeft: 'auto', background: 'rgba(180,58,58,1)' }}
-                variant="contained"
+        {isMatch ? (
+          <DrawerComp />
+        ) : (
+          <Grid sx={{ placeItems: 'center' }} container>
+            <Grid item xs={2}>
+              <Typography>
+                <ShoppingCartCheckoutIcon />
+              </Typography>
+            </Grid>
+            <Grid item xs={6}>
+              <Tabs
+                indicatorColor="secondary"
+                textColor="inherit"
+                value={val}
+                onChange={(e, val) => setVal(val)}
               >
-                Login
-              </Button>
-              <Button
-                sx={{ marginLeft: 1, background: 'rgba(180,58,58,1)' }}
-                variant="contained"
-              >
-                Sign up
-              </Button>
-            </Box>
+                {links.map((link, index) => (
+                  <Tab key={index} label={link} />
+                )
+            )}
+              </Tabs>
+            </Grid>
+            <Grid item xs={1} />
+            <Grid item xs={3}>
+              <Box display="flex">
+                <Button
+                  sx={{ marginLeft: 'auto', background: 'rgba(180,58,58,1)' }}
+                  variant="contained"
+                >
+                  Login
+                </Button>
+                <Button
+                  sx={{ marginLeft: 1, background: 'rgba(180,58,58,1)' }}
+                  variant="contained"
+                >
+                  Sign up
+                </Button>
+              </Box>
+            </Grid>
           </Grid>
-        </Grid>
-        <DrawerComp />
+        )}
       </Toolbar>
     </AppBar>
   );
