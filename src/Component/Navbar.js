@@ -14,9 +14,9 @@ const Navbar=({links})=>{
                     </Grid>
                     <Grid item xs={5}>
                         <Tabs indicatorColor="secondary" textColor="inherit" value={val} onChange={(e,val)=>setVal(val)}>
-                            <Tab label="product"></Tab>
-                            <Tab label="overview"></Tab>setVal
-                            <Tab label="pricing"></Tab>
+                            {links.map((link,index)=>(
+                                <Tab key={index} label={link}/>
+                            ))}
 
                         </Tabs>
                     </Grid>
