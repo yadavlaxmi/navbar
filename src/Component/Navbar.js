@@ -1,9 +1,13 @@
 import React, { useState } from 'react'; 
 import DrawerComp from './DrawerComp';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
-import {placeItems, marginLeft,AppBar, Grid, Typography,Toolbar,Tabs,Tab, Button,Box } from "@mui/material";
+import {useMediaQuery,placeItems, marginLeft,AppBar, Grid, Typography,Toolbar,Tabs,Tab, Button,Box } from "@mui/material";
 import { ShoppingCartCheckout } from "@mui/icons-material";
+import { useTheme } from '@emotion/react';
 const Navbar=({links})=>{
+    const theme=useTheme();
+    console.log(theme)
+
     const[val,setVal]=useState()
     return(
     
